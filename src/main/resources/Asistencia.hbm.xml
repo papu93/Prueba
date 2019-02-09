@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/01/2019 23:56:56 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.Asistencia" table="Asistencia" catalog="sivge" optimistic-lock="version">
+        <id name="idAlumno" type="int">
+            <column name="id_alumno" />
+            <generator class="foreign">
+                <param name="property">alumno</param>
+            </generator>
+        </id>
+        <one-to-one name="alumno" class="Model.Alumno" constrained="true"></one-to-one>
+        <property name="asistencia" type="java.lang.Integer">
+            <column name="asistencia" />
+        </property>
+        <property name="personaDni" type="java.lang.Integer">
+            <column name="persona_DNI" />
+        </property>
+        <property name="faltas" type="java.lang.Integer">
+            <column name="faltas" />
+        </property>
+        <property name="justificadas" type="java.lang.Integer">
+            <column name="justificadas" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="observaciones" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

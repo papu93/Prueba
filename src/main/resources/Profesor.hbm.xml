@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/01/2019 23:56:56 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.Profesor" table="Profesor" catalog="sivge" optimistic-lock="version">
+        <id name="idPersona" type="int">
+            <column name="id_persona" />
+            <generator class="foreign">
+                <param name="property">persona</param>
+            </generator>
+        </id>
+        <one-to-one name="persona" class="Model.Persona" constrained="true"></one-to-one>
+    </class>
+</hibernate-mapping>
